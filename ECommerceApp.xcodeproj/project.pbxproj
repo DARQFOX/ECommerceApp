@@ -13,6 +13,7 @@
 		EF13925B2061C07F000ABBE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF13925A2061C07F000ABBE6 /* Assets.xcassets */; };
 		EF13925E2061C07F000ABBE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF13925C2061C07F000ABBE6 /* LaunchScreen.storyboard */; };
 		EF54CBB02073C651002DCB0E /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF54CBAF2073C651002DCB0E /* FeedTableViewController.swift */; };
+		EF54CBB22073D512002DCB0E /* ProductFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF54CBB12073D512002DCB0E /* ProductFeedCell.swift */; };
 		EFDE492C20731A3C0098A676 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDE492B20731A3C0098A676 /* Product.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		EF13925D2061C07F000ABBE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF13925F2061C07F000ABBE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF54CBAF2073C651002DCB0E /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
+		EF54CBB12073D512002DCB0E /* ProductFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFeedCell.swift; sourceTree = "<group>"; };
 		EFDE492B20731A3C0098A676 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,8 +65,8 @@
 				EF54CBAC2073C5B4002DCB0E /* Model */,
 				EF1392532061C07F000ABBE6 /* AppDelegate.swift */,
 				EF1392572061C07F000ABBE6 /* Main.storyboard */,
-				EF13925A2061C07F000ABBE6 /* Assets.xcassets */,
 				EF13925C2061C07F000ABBE6 /* LaunchScreen.storyboard */,
+				EF13925A2061C07F000ABBE6 /* Assets.xcassets */,
 				EF13925F2061C07F000ABBE6 /* Info.plist */,
 			);
 			path = ECommerceApp;
@@ -81,6 +83,7 @@
 		EF54CBAD2073C5C5002DCB0E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EF54CBB12073D512002DCB0E /* ProductFeedCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF54CBB22073D512002DCB0E /* ProductFeedCell.swift in Sources */,
 				EF1392562061C07F000ABBE6 /* ViewController.swift in Sources */,
 				EF1392542061C07F000ABBE6 /* AppDelegate.swift in Sources */,
 				EFDE492C20731A3C0098A676 /* Product.swift in Sources */,

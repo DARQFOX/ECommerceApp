@@ -9,34 +9,52 @@
 import UIKit
 
 class FeedTableViewController: UITableViewController {
+    
+    var products: [Product]?
+    
+    struct StoryBoard {
+        static let ProductFeedCell = "ProductFeedCell"
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        navigationItem.title = "TAKE A LOOK!"
+        fetchProducts()
+        
     }
-
+    
+    func fetchProducts() {
+        products = Product.fetchProducts()
+        tableView.reloadData()
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-    
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 0
+        if let products = products {
+            return products.count
+        } else {
+            return 0
+        }
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewController.StoryBoard.ProductFeedCell, for: indexPath) as! ProductFeedCell
+        
+        if let products = products {
+            let product = products[indexPath.row]
+            cell.product = product
+        }
 
         return cell
     }
-    */
+ 
 
     
 

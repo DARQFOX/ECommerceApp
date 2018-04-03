@@ -140,13 +140,13 @@
         <!--Root View Controller-->
         <scene sceneID="lBo-O3-mVS">
             <objects>
-                <tableViewController id="Y4J-bh-qFH" sceneMemberID="viewController">
+                <tableViewController id="Y4J-bh-qFH" customClass="FeedTableViewController" customModule="ECommerceApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6cL-gq-Mgn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="444" id="7YW-8D-DOZ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductFeedCell" rowHeight="444" id="7YW-8D-DOZ" customClass="ProductFeedCell" customModule="ECommerceApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="444"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7YW-8D-DOZ" id="Vl3-Q9-cnD">
@@ -183,6 +183,11 @@
                                         <constraint firstItem="t5d-s4-pGT" firstAttribute="leading" secondItem="Vl3-Q9-cnD" secondAttribute="leadingMargin" id="quF-9v-fEc"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="productImageView" destination="PLa-fL-W6L" id="hWL-V6-mrv"/>
+                                    <outlet property="productNameLabel" destination="t5d-s4-pGT" id="kXe-hk-yAV"/>
+                                    <outlet property="productPriceLabel" destination="oNm-Fu-Sg7" id="rJe-1Z-Suf"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
