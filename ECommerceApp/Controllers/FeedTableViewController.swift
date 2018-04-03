@@ -11,15 +11,11 @@ import UIKit
 class FeedTableViewController: UITableViewController {
     
     var products: [Product]?
-    
-    struct StoryBoard {
-        static let ProductFeedCell = "ProductFeedCell"
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "TAKE A LOOK!"
+        navigationItem.title = Constants.PRODUCT_FEED_TITLE
         fetchProducts()
         
     }
@@ -45,7 +41,7 @@ class FeedTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewController.StoryBoard.ProductFeedCell, for: indexPath) as! ProductFeedCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.PRODUCT_FEED_CELL, for: indexPath) as! ProductFeedCell
         
         if let products = products {
             let product = products[indexPath.row]
