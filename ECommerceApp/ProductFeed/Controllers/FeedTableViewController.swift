@@ -18,6 +18,9 @@ class FeedTableViewController: UITableViewController {
         navigationItem.title = Constants.PRODUCT_FEED_TITLE
         fetchProducts()
         
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
     }
     
     func fetchProducts() {
@@ -41,7 +44,7 @@ class FeedTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.PRODUCT_FEED_CELL, for: indexPath) as! ProductFeedCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.PRODUCT_FEED_CELL, for: indexPath) as! ProductFeedCell
         
         if let products = products {
             let product = products[indexPath.row]
@@ -50,6 +53,10 @@ class FeedTableViewController: UITableViewController {
 
         return cell
     }
+    
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        performSegue(withIdentifier: DetailViewSegue, sender: AnyObject)
+//    }
  
 
     

@@ -9,7 +9,15 @@
 import Foundation
 
 struct Constants {
-     static let PRODUCT_FEED_TITLE = "Merch!"
-     static let PRODUCT_FEED_CELL = "ProductFeedCell"
+    
+    static let PRODUCT_FEED_TITLE = "Merch!"
+    
+    struct Cells {
+        static let PRODUCT_FEED_CELL = "ProductFeedCell"
+        static let PRODUCT_DETAIL_CELL = "ProductDetailCell"
+        static let BUY_BUTTON_CELL = "BuyButtonCell"
+        static let SHOW_PRODUCT_DETAIL_CELL = "ShowProductDetailCell"
+    }
+    
 }
 
