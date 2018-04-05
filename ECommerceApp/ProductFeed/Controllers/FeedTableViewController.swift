@@ -11,9 +11,12 @@ import UIKit
 class FeedTableViewController: UITableViewController {
     
     var products: [Product]?
+    var selectedProduct: Product!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
         
         navigationItem.title = Constants.PRODUCT_FEED_TITLE
         fetchProducts()
@@ -54,11 +57,38 @@ class FeedTableViewController: UITableViewController {
         return cell
     }
     
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        performSegue(withIdentifier: DetailViewSegue, sender: AnyObject)
-//    }
  
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let indexPath = tableView.indexPathForSelectedRow
+        let currentCell = self.products?[(indexPath?.row)!]
+        
+       selectedProduct = currentCell
+        //performSegue(withIdentifier: "DetailViewSegue", sender: self)
+        
+        
+//        DispatchQueue.global(qos: .userInitiated).async {
+//            guard let selectedProduct = self.products?[indexPath.row] else {
+//                return
+//            }
+//            let productDetailViewVC = ProductDetailTableViewController()
+//            productDetailViewVC.product = selectedProduct
+//            DispatchQueue.main.async {
+//            self.performSegue(withIdentifier: "DetailViewSegue", sender: self)
+//            }
+//        } // loka.to2a // imokhles
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DetailViewSegue" {
+            let viewController = segue.destination as! ProductDetailTableViewController
+            viewController.product = selectedProduct
+        }
+    }
+    
+    
+    
     
 
 }

@@ -10,12 +10,12 @@ import UIKit
 
 class ProductDetailTableViewController: UITableViewController {
     
-    var product: Product!
+    var product: Product?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = product.name
+//        title = product.name
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
     }
@@ -39,20 +39,26 @@ class ProductDetailTableViewController: UITableViewController {
         if indexPath.row == 0 {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.PRODUCT_DETAIL_CELL, for: indexPath) as! ProductDetailCell
-            cell.product = product
+            if product != nil {
+                cell.configureCell(withProduct: product!)
+            }
+            
             cell.selectionStyle = .none
             return cell
             
         } else if indexPath.row == 1 {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.BUY_BUTTON_CELL, for: indexPath) as! BuyButtonCell
-            cell.products = product
+            if product != nil {
+                cell.configureCell(withProduct: product!)
+            }
             cell.selectionStyle = .none
             return cell
             
         } else if indexPath.row == 2 {
-            
+
             let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.SHOW_PRODUCT_DETAIL_CELL, for: indexPath)
+            
             cell.selectionStyle = .none
             return cell
             

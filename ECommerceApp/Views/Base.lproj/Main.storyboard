@@ -1,25 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hI0-MA-OeM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hI0-MA-OeM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="AvenirNext.ttc">
-            <string>AvenirNext-Regular</string>
-        </array>
-        <array key="AvenirNextCondensed.ttc">
-            <string>AvenirNextCondensed-DemiBold</string>
-            <string>AvenirNextCondensed-Medium</string>
-            <string>AvenirNextCondensed-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Tab Bar Controller-->
         <scene sceneID="eGl-wI-lEQ">
@@ -44,6 +34,7 @@
         <!--Root View Controller-->
         <scene sceneID="jOj-ii-Xb6">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VJ6-hC-ODz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="jlU-UE-6eh" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1xK-P5-XI8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -66,13 +57,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="GFw-Iw-hLf"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VJ6-hC-ODz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1510" y="-987"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Sib-R4-Dq0">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="955-m2-yuT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="Y6i-iS-Tvo" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="icon-nike" selectedImage="icon-nike-filled" id="NaO-QC-uUE">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
@@ -85,7 +76,6 @@
                         <segue destination="jlU-UE-6eh" kind="relationship" relationship="rootViewController" id="0HG-yY-r4m"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="955-m2-yuT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="559" y="-987"/>
         </scene>
@@ -178,7 +168,9 @@
                                         <constraint firstAttribute="trailing" secondItem="PLa-fL-W6L" secondAttribute="trailing" id="Jtc-bU-Ibr"/>
                                         <constraint firstItem="PLa-fL-W6L" firstAttribute="leading" secondItem="Vl3-Q9-cnD" secondAttribute="leading" id="Lcr-Sm-zQF"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="oNm-Fu-Sg7" secondAttribute="bottom" constant="13" id="XeB-gv-ECh"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oNm-Fu-Sg7" secondAttribute="trailingMargin" id="Yqx-k4-zJ1"/>
                                         <constraint firstItem="t5d-s4-pGT" firstAttribute="top" secondItem="PLa-fL-W6L" secondAttribute="bottom" constant="25" id="bVv-tE-ASA"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="t5d-s4-pGT" secondAttribute="trailingMargin" id="pib-mR-ZRc"/>
                                         <constraint firstItem="oNm-Fu-Sg7" firstAttribute="top" secondItem="t5d-s4-pGT" secondAttribute="bottom" constant="2" id="qqo-vM-QxE"/>
                                         <constraint firstItem="t5d-s4-pGT" firstAttribute="leading" secondItem="Vl3-Q9-cnD" secondAttribute="leadingMargin" id="quF-9v-fEc"/>
                                     </constraints>
@@ -187,6 +179,7 @@
                                     <outlet property="productImageView" destination="PLa-fL-W6L" id="hWL-V6-mrv"/>
                                     <outlet property="productNameLabel" destination="t5d-s4-pGT" id="kXe-hk-yAV"/>
                                     <outlet property="productPriceLabel" destination="oNm-Fu-Sg7" id="rJe-1Z-Suf"/>
+                                    <segue destination="rrk-y4-Wp1" kind="show" identifier="DetailViewSegue" id="kyP-ir-anp"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -196,18 +189,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="MeE-AN-rZd"/>
-                    <connections>
-                        <segue destination="rrk-y4-Wp1" kind="show" identifier="DetailViewSegue" id="wgE-Qg-jeK"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qKA-9P-Yd6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1494" y="-1773"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Product Detail Table View Controller-->
         <scene sceneID="dzu-M3-Rgl">
             <objects>
-                <tableViewController id="rrk-y4-Wp1" sceneMemberID="viewController">
+                <tableViewController id="rrk-y4-Wp1" customClass="ProductDetailTableViewController" customModule="ECommerceApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9Sg-Az-B2r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -254,7 +244,7 @@
                                     <outlet property="productNameLabel" destination="onH-ZL-CLY" id="jde-Ac-j7f"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="65" id="ZeU-HS-7em" customClass="BuyButtonCell" customModule="ECommerceApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BuyButtonCell" rowHeight="65" id="ZeU-HS-7em" customClass="BuyButtonCell" customModule="ECommerceApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="576" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZeU-HS-7em" id="je9-kZ-sYO">
@@ -277,6 +267,9 @@
                                         <constraint firstItem="MXi-ZF-OQK" firstAttribute="leading" secondItem="je9-kZ-sYO" secondAttribute="leading" constant="12" id="sZH-1H-XXS"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="buyButton" destination="MXi-ZF-OQK" id="YdS-vF-gNi"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ShowProductDetailCell" rowHeight="53" id="qDA-tQ-mv2" customClass="ProductDetailCell" customModule="ECommerceApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="641" width="375" height="53"/>
@@ -293,6 +286,7 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="SVn-LP-m74" secondAttribute="trailing" constant="20" symbolic="YES" id="6Il-DY-fj6"/>
                                         <constraint firstItem="SVn-LP-m74" firstAttribute="leading" secondItem="JoG-JV-aUW" secondAttribute="leading" constant="12" id="BAZ-1C-cUp"/>
                                         <constraint firstItem="SVn-LP-m74" firstAttribute="top" secondItem="JoG-JV-aUW" secondAttribute="top" constant="16" id="O8o-sf-ijw"/>
                                         <constraint firstAttribute="bottom" secondItem="SVn-LP-m74" secondAttribute="bottom" constant="16" id="nYa-3E-giH"/>
@@ -374,6 +368,7 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JsM-lx-kZM" secondAttribute="trailing" constant="20" symbolic="YES" id="A83-4V-z8F"/>
                                         <constraint firstAttribute="bottom" secondItem="JsM-lx-kZM" secondAttribute="bottom" constant="24" id="gYw-0u-hii"/>
                                         <constraint firstItem="JsM-lx-kZM" firstAttribute="leading" secondItem="xgn-gn-Rbu" secondAttribute="leading" constant="24" id="ksK-R9-hVW"/>
                                         <constraint firstItem="JsM-lx-kZM" firstAttribute="top" secondItem="xgn-gn-Rbu" secondAttribute="top" constant="24" id="w7V-fM-nyy"/>
@@ -637,6 +632,7 @@
                                         <constraint firstAttribute="bottom" secondItem="qZk-f8-LFQ" secondAttribute="bottom" constant="24" id="1cU-Ot-bJ1"/>
                                         <constraint firstItem="qZk-f8-LFQ" firstAttribute="top" secondItem="8Zj-0N-KsL" secondAttribute="top" constant="24" id="P4M-QF-7pL"/>
                                         <constraint firstItem="qZk-f8-LFQ" firstAttribute="leading" secondItem="8Zj-0N-KsL" secondAttribute="leading" constant="24" id="nST-px-TR7"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qZk-f8-LFQ" secondAttribute="trailing" constant="20" symbolic="YES" id="vIa-HQ-TgL"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="24" minY="0.0" maxX="24" maxY="0.0"/>
