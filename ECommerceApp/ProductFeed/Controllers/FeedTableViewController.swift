@@ -29,6 +29,8 @@ class FeedTableViewController: UITableViewController {
     func fetchProducts() {
         products = Product.fetchProducts()
         tableView.reloadData()
+        
+    
     }
 
     // MARK: - Table view data source
@@ -51,7 +53,7 @@ class FeedTableViewController: UITableViewController {
         
         if let products = products {
             let product = products[indexPath.row]
-            cell.product = product
+            cell.configureCell(withProduct: product)
         }
 
         return cell
@@ -59,36 +61,15 @@ class FeedTableViewController: UITableViewController {
     
  
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let indexPath = tableView.indexPathForSelectedRow
-        let currentCell = self.products?[(indexPath?.row)!]
-        
-       selectedProduct = currentCell
-        //performSegue(withIdentifier: "DetailViewSegue", sender: self)
-        
-        
-//        DispatchQueue.global(qos: .userInitiated).async {
-//            guard let selectedProduct = self.products?[indexPath.row] else {
-//                return
-//            }
-//            let productDetailViewVC = ProductDetailTableViewController()
-//            productDetailViewVC.product = selectedProduct
-//            DispatchQueue.main.async {
-//            self.performSegue(withIdentifier: "DetailViewSegue", sender: self)
-//            }
-//        } // loka.to2a // imokhles
+        DispatchQueue.global(qos: .userInitiated).async {
+            guard let selectedProduct = self.products?[indexPath.row] else {
+                return
+            }
+            let productDetailViewVC = ProductDetailTableViewController()
+            productDetailViewVC.product = selectedProduct
+            DispatchQueue.main.async {
+            }
+        } // loka.to2a // imokhles
         
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "DetailViewSegue" {
-            let viewController = segue.destination as! ProductDetailTableViewController
-            viewController.product = selectedProduct
-        }
-    }
-    
-    
-    
-    
-
 }

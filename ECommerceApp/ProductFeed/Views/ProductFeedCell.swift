@@ -21,6 +21,7 @@ class ProductFeedCell: UITableViewCell {
     } */
     
     var product: Product!
+    
     func configureCell(withProduct product: Product) -> Void {
         
         self.product = product
