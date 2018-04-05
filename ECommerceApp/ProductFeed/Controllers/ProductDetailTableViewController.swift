@@ -15,7 +15,7 @@ class ProductDetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        title = product.name
+        title = product?.name
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
     }
@@ -40,7 +40,7 @@ class ProductDetailTableViewController: UITableViewController {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.PRODUCT_DETAIL_CELL, for: indexPath) as! ProductDetailCell
             if product != nil {
-                cell.configureCell(withProduct: product!)
+                cell.product = product
             }
             
             cell.selectionStyle = .none
@@ -50,7 +50,7 @@ class ProductDetailTableViewController: UITableViewController {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.BUY_BUTTON_CELL, for: indexPath) as! BuyButtonCell
             if product != nil {
-                cell.configureCell(withProduct: product!)
+                cell.product = product
             }
             cell.selectionStyle = .none
             return cell

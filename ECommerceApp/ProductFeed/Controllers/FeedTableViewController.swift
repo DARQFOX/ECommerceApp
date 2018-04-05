@@ -11,7 +11,6 @@ import UIKit
 class FeedTableViewController: UITableViewController {
     
     var products: [Product]?
-    var selectedProduct: Product!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +28,6 @@ class FeedTableViewController: UITableViewController {
     func fetchProducts() {
         products = Product.fetchProducts()
         tableView.reloadData()
-        
-    
     }
 
     // MARK: - Table view data source
@@ -54,6 +51,7 @@ class FeedTableViewController: UITableViewController {
         if let products = products {
             let product = products[indexPath.row]
             cell.configureCell(withProduct: product)
+            cell.product = product
         }
 
         return cell
@@ -61,15 +59,33 @@ class FeedTableViewController: UITableViewController {
     
  
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        DispatchQueue.global(qos: .userInitiated).async {
-            guard let selectedProduct = self.products?[indexPath.row] else {
-                return
-            }
-            let productDetailViewVC = ProductDetailTableViewController()
-            productDetailViewVC.product = selectedProduct
-            DispatchQueue.main.async {
-            }
-        } // loka.to2a // imokhles
+        
+        // 1.
+//        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//        let toViewController = storyboard.instantiateViewController(withIdentifier: "ProductDetailTableViewController") as! ProductDetailTableViewController
+//        toViewController.product = products[indexPath.row]
+//        navigationController?.pushViewController(toViewController, animated: true)
+        
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let products = self.products else { return }
+        
+        
+        // 2.
+        if segue.identifier == "DetailViewSegue" {
+            let viewController = segue.destination as! ProductDetailTableViewController
+            
+            if  let indexPath = tableView.indexPathForSelectedRow {
+                viewController.product = products[indexPath.row]
+            }
+        }
+    }
+    
+    
+    // 1. approach
+    
+    
+
 }

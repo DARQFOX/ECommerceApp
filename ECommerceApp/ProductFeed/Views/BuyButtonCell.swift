@@ -12,20 +12,19 @@ class BuyButtonCell: UITableViewCell {
 
     @IBOutlet weak var buyButton: UIButton!
     
-    var product: Product!
-    func configureCell(withProduct product: Product) -> Void {
-        
-        self.product = product
-        buyButton.setTitle(String(format: "Buy %ld", self.product.price!), for: [])
-        
-    }
+//    var product: Product!
+//    func configureCell(withProduct product: Product) -> Void {
+//
+//        self.product = product
+//        buyButton.setTitle(String(format: "Buy %ld", self.product.price!), for: [])
+//
+//    }
     
-    /*
-    var products: Product! {
+    
+    var product: Product! {
         didSet {
-            buyButton.setTitle(String(format: "Buy %ld", products.price!), for: [])
+            buyButton.setTitle("BUY $\(product.price!)", for: [])
         }
     }
- */
 
 }

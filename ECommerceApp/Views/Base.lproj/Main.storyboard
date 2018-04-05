@@ -197,7 +197,7 @@
         <!--Product Detail Table View Controller-->
         <scene sceneID="dzu-M3-Rgl">
             <objects>
-                <tableViewController id="rrk-y4-Wp1" customClass="ProductDetailTableViewController" customModule="ECommerceApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ProductDetailTableViewController" id="rrk-y4-Wp1" customClass="ProductDetailTableViewController" customModule="ECommerceApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9Sg-Az-B2r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
