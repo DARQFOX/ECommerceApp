@@ -11,12 +11,14 @@
 		EF1392592061C07F000ABBE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF1392572061C07F000ABBE6 /* Main.storyboard */; };
 		EF13925B2061C07F000ABBE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF13925A2061C07F000ABBE6 /* Assets.xcassets */; };
 		EF13925E2061C07F000ABBE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF13925C2061C07F000ABBE6 /* LaunchScreen.storyboard */; };
+		EF2B3CD82076B783003CC223 /* ProductImagesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2B3CD72076B783003CC223 /* ProductImagesPageViewController.swift */; };
 		EF54CBB02073C651002DCB0E /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF54CBAF2073C651002DCB0E /* FeedTableViewController.swift */; };
 		EF54CBB22073D512002DCB0E /* ProductFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF54CBB12073D512002DCB0E /* ProductFeedCell.swift */; };
 		EF54CBB42073EA05002DCB0E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF54CBB32073EA05002DCB0E /* Constants.swift */; };
 		EF54CBBB2074435B002DCB0E /* ProductDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF54CBBA2074435B002DCB0E /* ProductDetailCell.swift */; };
 		EF54CBBD20744395002DCB0E /* BuyButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF54CBBC20744395002DCB0E /* BuyButtonCell.swift */; };
 		EF54CBBF207445B2002DCB0E /* ProductDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF54CBBE207445B2002DCB0E /* ProductDetailTableViewController.swift */; };
+		EF9262922076A55700A8FCB7 /* ProductImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9262912076A55700A8FCB7 /* ProductImageViewController.swift */; };
 		EFDE492C20731A3C0098A676 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDE492B20731A3C0098A676 /* Product.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,12 +29,14 @@
 		EF13925A2061C07F000ABBE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF13925D2061C07F000ABBE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF13925F2061C07F000ABBE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF2B3CD72076B783003CC223 /* ProductImagesPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImagesPageViewController.swift; sourceTree = "<group>"; };
 		EF54CBAF2073C651002DCB0E /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		EF54CBB12073D512002DCB0E /* ProductFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFeedCell.swift; sourceTree = "<group>"; };
 		EF54CBB32073EA05002DCB0E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EF54CBBA2074435B002DCB0E /* ProductDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailCell.swift; sourceTree = "<group>"; };
 		EF54CBBC20744395002DCB0E /* BuyButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyButtonCell.swift; sourceTree = "<group>"; };
 		EF54CBBE207445B2002DCB0E /* ProductDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailTableViewController.swift; sourceTree = "<group>"; };
+		EF9262912076A55700A8FCB7 /* ProductImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageViewController.swift; sourceTree = "<group>"; };
 		EFDE492B20731A3C0098A676 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +112,8 @@
 			children = (
 				EF54CBAF2073C651002DCB0E /* FeedTableViewController.swift */,
 				EF54CBBE207445B2002DCB0E /* ProductDetailTableViewController.swift */,
+				EF9262912076A55700A8FCB7 /* ProductImageViewController.swift */,
+				EF2B3CD72076B783003CC223 /* ProductImagesPageViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -195,7 +201,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF54CBB22073D512002DCB0E /* ProductFeedCell.swift in Sources */,
+				EF9262922076A55700A8FCB7 /* ProductImageViewController.swift in Sources */,
 				EF1392542061C07F000ABBE6 /* AppDelegate.swift in Sources */,
+				EF2B3CD82076B783003CC223 /* ProductImagesPageViewController.swift in Sources */,
 				EFDE492C20731A3C0098A676 /* Product.swift in Sources */,
 				EF54CBB02073C651002DCB0E /* FeedTableViewController.swift in Sources */,
 				EF54CBBF207445B2002DCB0E /* ProductDetailTableViewController.swift in Sources */,
