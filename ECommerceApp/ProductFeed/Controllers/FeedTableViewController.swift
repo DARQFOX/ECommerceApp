@@ -50,7 +50,7 @@ class FeedTableViewController: UITableViewController {
         
         if let products = products {
             let product = products[indexPath.row]
-            cell.configureCell(withProduct: product)
+//            cell.configureCell(withProduct: product)
             cell.product = product
         }
 
@@ -58,34 +58,28 @@ class FeedTableViewController: UITableViewController {
     }
     
  
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        // 1.
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+////         1.
 //        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 //        let toViewController = storyboard.instantiateViewController(withIdentifier: "ProductDetailTableViewController") as! ProductDetailTableViewController
-//        toViewController.product = products[indexPath.row]
+//        toViewController.product = products?[indexPath.row]
 //        navigationController?.pushViewController(toViewController, animated: true)
-        
-        
-    }
+//
+//
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let products = self.products else { return }
-        
-        
+
+
         // 2.
         if segue.identifier == "DetailViewSegue" {
             let viewController = segue.destination as! ProductDetailTableViewController
-            
+
             if  let indexPath = tableView.indexPathForSelectedRow {
                 viewController.product = products[indexPath.row]
             }
         }
     }
-    
-    
-    // 1. approach
-    
-    
-
 }
