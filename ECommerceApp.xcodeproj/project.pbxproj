@@ -18,6 +18,7 @@
 		EF54CBBB2074435B002DCB0E /* ProductDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF54CBBA2074435B002DCB0E /* ProductDetailCell.swift */; };
 		EF54CBBD20744395002DCB0E /* BuyButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF54CBBC20744395002DCB0E /* BuyButtonCell.swift */; };
 		EF54CBBF207445B2002DCB0E /* ProductDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF54CBBE207445B2002DCB0E /* ProductDetailTableViewController.swift */; };
+		EF67B01F207743480020A885 /* ProductImagesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF67B01E207743480020A885 /* ProductImagesHeaderView.swift */; };
 		EF9262922076A55700A8FCB7 /* ProductImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9262912076A55700A8FCB7 /* ProductImageViewController.swift */; };
 		EFDE492C20731A3C0098A676 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDE492B20731A3C0098A676 /* Product.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		EF54CBBA2074435B002DCB0E /* ProductDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailCell.swift; sourceTree = "<group>"; };
 		EF54CBBC20744395002DCB0E /* BuyButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyButtonCell.swift; sourceTree = "<group>"; };
 		EF54CBBE207445B2002DCB0E /* ProductDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailTableViewController.swift; sourceTree = "<group>"; };
+		EF67B01E207743480020A885 /* ProductImagesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImagesHeaderView.swift; sourceTree = "<group>"; };
 		EF9262912076A55700A8FCB7 /* ProductImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageViewController.swift; sourceTree = "<group>"; };
 		EFDE492B20731A3C0098A676 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,6 +116,7 @@
 				EF54CBBE207445B2002DCB0E /* ProductDetailTableViewController.swift */,
 				EF9262912076A55700A8FCB7 /* ProductImageViewController.swift */,
 				EF2B3CD72076B783003CC223 /* ProductImagesPageViewController.swift */,
+				EF67B01E207743480020A885 /* ProductImagesHeaderView.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				EFDE492C20731A3C0098A676 /* Product.swift in Sources */,
 				EF54CBB02073C651002DCB0E /* FeedTableViewController.swift in Sources */,
 				EF54CBBF207445B2002DCB0E /* ProductDetailTableViewController.swift in Sources */,
+				EF67B01F207743480020A885 /* ProductImagesHeaderView.swift in Sources */,
 				EF54CBBB2074435B002DCB0E /* ProductDetailCell.swift in Sources */,
 				EF54CBBD20744395002DCB0E /* BuyButtonCell.swift in Sources */,
 				EF54CBB42073EA05002DCB0E /* Constants.swift in Sources */,

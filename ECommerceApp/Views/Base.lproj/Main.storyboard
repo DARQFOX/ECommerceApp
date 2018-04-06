@@ -203,14 +203,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="p3c-pE-lL0">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="p3c-pE-lL0" customClass="ProductImagesHeaderView" customModule="ECommerceApp" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAX-NT-Ryb">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                     <connections>
-                                        <segue destination="jbD-w2-Zd4" kind="embed" id="Z2i-mL-Tti"/>
+                                        <segue destination="jbD-w2-Zd4" kind="embed" identifier="ProductImagesPageViewController" id="Z2i-mL-Tti"/>
                                     </connections>
                                 </containerView>
                             </subviews>
@@ -335,6 +335,9 @@
                         </connections>
                     </tableView>
                     <size key="freeformSize" width="375" height="1200"/>
+                    <connections>
+                        <outlet property="productImagesHeaderView" destination="p3c-pE-lL0" id="sea-oX-T9p"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ILi-8g-nNd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

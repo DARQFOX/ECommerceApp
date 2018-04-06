@@ -12,6 +12,12 @@ class ProductDetailTableViewController: UITableViewController {
     
     var product: Product?
     
+    @IBOutlet weak var productImagesHeaderView: ProductImagesHeaderView!
+    
+    struct Storyboard {
+        static let showImagesPageVC = "ProductImagesPageViewController"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,6 +75,17 @@ class ProductDetailTableViewController: UITableViewController {
         }
             
     }
+    
+    // Mark: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Storyboard.showImagesPageVC {
+            if let imagesPageVC = segue.destination as? ProductImagesPageViewController {
+                imagesPageVC.images = product?.images
+            }
+        }
+    }
+    
     
 
 }
