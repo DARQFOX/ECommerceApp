@@ -116,7 +116,6 @@
 				EF54CBBE207445B2002DCB0E /* ProductDetailTableViewController.swift */,
 				EF9262912076A55700A8FCB7 /* ProductImageViewController.swift */,
 				EF2B3CD72076B783003CC223 /* ProductImagesPageViewController.swift */,
-				EF67B01E207743480020A885 /* ProductImagesHeaderView.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -127,6 +126,7 @@
 				EF54CBB12073D512002DCB0E /* ProductFeedCell.swift */,
 				EF54CBBA2074435B002DCB0E /* ProductDetailCell.swift */,
 				EF54CBBC20744395002DCB0E /* BuyButtonCell.swift */,
+				EF67B01E207743480020A885 /* ProductImagesHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

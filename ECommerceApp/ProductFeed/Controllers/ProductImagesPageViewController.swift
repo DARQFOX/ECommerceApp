@@ -8,9 +8,16 @@
 
 import UIKit
 
+protocol ProductImagesPageViewControllerDelegate: class {
+    func setupPageController(numberOfPages: Int)
+    func turnPageController(to index: Int)
+}
+
 class ProductImagesPageViewController: UIPageViewController {
     
     var images: [UIImage]? = Product.fetchProducts().first!.images
+    
+    weak var pageViewControllerDelegate: ProductImagesPageViewControllerDelegate?
     
     struct Storyboard {
         static let productImageViewController = "ProductImageViewController"
@@ -27,6 +34,8 @@ class ProductImagesPageViewController: UIPageViewController {
                 controllers.append(productImageVC)
             }
         }
+        
+        self.pageViewControllerDelegate?.setupPageController(numberOfPages: controllers.count)
         
         return controllers
     }()
@@ -65,6 +74,8 @@ class ProductImagesPageViewController: UIPageViewController {
             if viewController === vc {
                 if let productImageVC = viewController as? ProductImageViewController {
                     productImageVC.image = self.images?[index]
+                    
+                    self.pageViewControllerDelegate?.turnPageController(to: index)
                 }
             }
         }

@@ -82,6 +82,7 @@ class ProductDetailTableViewController: UITableViewController {
         if segue.identifier == Storyboard.showImagesPageVC {
             if let imagesPageVC = segue.destination as? ProductImagesPageViewController {
                 imagesPageVC.images = product?.images
+                imagesPageVC.pageViewControllerDelegate = productImagesHeaderView
             }
         }
     }

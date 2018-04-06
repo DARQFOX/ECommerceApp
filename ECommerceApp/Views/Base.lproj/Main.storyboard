@@ -213,14 +213,25 @@
                                         <segue destination="jbD-w2-Zd4" kind="embed" identifier="ProductImagesPageViewController" id="Z2i-mL-Tti"/>
                                     </connections>
                                 </containerView>
+                                <pageControl opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="4ZZ-jd-0Sg">
+                                    <rect key="frame" x="168" y="338" width="39" height="37"/>
+                                    <color key="tintColor" red="0.13836486319999999" green="0.46711517070000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="currentPageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </pageControl>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstAttribute="bottom" secondItem="4ZZ-jd-0Sg" secondAttribute="bottom" id="20S-EG-YPp"/>
+                                <constraint firstItem="4ZZ-jd-0Sg" firstAttribute="centerX" secondItem="p3c-pE-lL0" secondAttribute="centerX" id="OVD-MG-kJE"/>
                                 <constraint firstAttribute="trailing" secondItem="aAX-NT-Ryb" secondAttribute="trailing" id="Q1m-Ry-54w"/>
                                 <constraint firstItem="aAX-NT-Ryb" firstAttribute="leading" secondItem="p3c-pE-lL0" secondAttribute="leading" id="S7G-Gp-XCw"/>
                                 <constraint firstItem="aAX-NT-Ryb" firstAttribute="top" secondItem="p3c-pE-lL0" secondAttribute="top" id="ZfJ-1R-u8F"/>
                                 <constraint firstAttribute="bottom" secondItem="aAX-NT-Ryb" secondAttribute="bottom" id="op0-Ne-nSj"/>
                             </constraints>
+                            <connections>
+                                <outlet property="pageControl" destination="4ZZ-jd-0Sg" id="wYV-XN-tNp"/>
+                            </connections>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductDetailCell" rowHeight="173" id="e3z-gi-xNB" customClass="ProductDetailCell" customModule="ECommerceApp" customModuleProvider="target">
