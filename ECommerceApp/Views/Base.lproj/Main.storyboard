@@ -203,12 +203,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="p3c-pE-lL0">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="p3c-pE-lL0">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAX-NT-Ryb">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="908"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                     <connections>
                                         <segue destination="jbD-w2-Zd4" kind="embed" id="Z2i-mL-Tti"/>
                                     </connections>
@@ -338,12 +338,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ILi-8g-nNd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2396" y="-2013"/>
+            <point key="canvasLocation" x="2396" y="-2013.1934032983511"/>
         </scene>
-        <!--Page View Controller-->
+        <!--Product Images Page View Controller-->
         <scene sceneID="g7g-Qd-wbU">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="jbD-w2-Zd4" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="max" id="jbD-w2-Zd4" customClass="ProductImagesPageViewController" customModule="ECommerceApp" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AAv-ac-iOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3222" y="-2255"/>
@@ -356,7 +356,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="s1" translatesAutoresizingMaskIntoConstraints="NO" id="uyK-lC-59m">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="s1" translatesAutoresizingMaskIntoConstraints="NO" id="uyK-lC-59m">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                         </subviews>

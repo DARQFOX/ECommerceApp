@@ -12,7 +12,11 @@ class ProductImageViewController: UIViewController {
     
     @IBOutlet weak var productImageView: UIImageView!
     
-    var image: UIImage?
+    var image: UIImage? {
+        didSet {
+            self.productImageView?.image = image
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
