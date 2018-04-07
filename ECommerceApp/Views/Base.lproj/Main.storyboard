@@ -319,7 +319,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="365" id="cJp-kc-i14">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SuggestionTableViewCell" rowHeight="365" id="cJp-kc-i14" customClass="SuggestionTableViewCell" customModule="ECommerceApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="694" width="375" height="365"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cJp-kc-i14" id="bKW-4x-bFQ">
@@ -332,12 +332,53 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ddE-Rg-1T5">
+                                            <rect key="frame" x="16" y="69" width="343" height="285"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="2.5" id="P43-le-1jh">
+                                                <size key="itemSize" width="185" height="185"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SuggestionCollectionViewCell" id="5eL-qh-ABA" customClass="SuggestionCollectionViewCell" customModule="ECommerceApp" customModuleProvider="target">
+                                                    <rect key="frame" x="79" y="0.0" width="185" height="185"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                        <rect key="frame" x="0.0" y="0.0" width="185" height="185"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="s1" translatesAutoresizingMaskIntoConstraints="NO" id="3sa-wb-tTV">
+                                                                <rect key="frame" x="0.0" y="0.0" width="185" height="185"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="3sa-wb-tTV" secondAttribute="bottom" id="FCl-gE-4h6"/>
+                                                        <constraint firstItem="3sa-wb-tTV" firstAttribute="leading" secondItem="5eL-qh-ABA" secondAttribute="leading" id="IxR-9i-QBC"/>
+                                                        <constraint firstItem="3sa-wb-tTV" firstAttribute="top" secondItem="5eL-qh-ABA" secondAttribute="top" id="rIX-rZ-Ssx"/>
+                                                        <constraint firstAttribute="trailing" secondItem="3sa-wb-tTV" secondAttribute="trailing" id="vMB-zv-oEK"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="imageView" destination="3sa-wb-tTV" id="ARX-Mi-2m2"/>
+                                                    </connections>
+                                                </collectionViewCell>
+                                            </cells>
+                                        </collectionView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="E1S-SV-n6H" firstAttribute="centerX" secondItem="bKW-4x-bFQ" secondAttribute="centerX" id="06P-7u-bOA"/>
+                                        <constraint firstItem="ddE-Rg-1T5" firstAttribute="leading" secondItem="bKW-4x-bFQ" secondAttribute="leadingMargin" id="7gX-hS-w9A"/>
+                                        <constraint firstItem="ddE-Rg-1T5" firstAttribute="top" secondItem="E1S-SV-n6H" secondAttribute="bottom" constant="24" id="Eys-zc-Y6P"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ddE-Rg-1T5" secondAttribute="trailing" id="PeS-us-ZqD"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ddE-Rg-1T5" secondAttribute="bottom" id="UqV-YZ-l3S"/>
                                         <constraint firstItem="E1S-SV-n6H" firstAttribute="top" secondItem="bKW-4x-bFQ" secondAttribute="top" constant="24" id="ZfJ-0E-eTc"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="collectionView" destination="ddE-Rg-1T5" id="tuP-fs-FT0"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
