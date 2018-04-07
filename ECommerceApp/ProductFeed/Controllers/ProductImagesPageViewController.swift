@@ -18,11 +18,7 @@ class ProductImagesPageViewController: UIPageViewController {
     var images: [UIImage]? = Product.fetchProducts().first!.images
     
     weak var pageViewControllerDelegate: ProductImagesPageViewControllerDelegate?
-    
-    struct Storyboard {
-        static let productImageViewController = "ProductImageViewController"
-    }
-    
+        
     lazy var controllers: [UIViewController] = {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
@@ -30,7 +26,7 @@ class ProductImagesPageViewController: UIPageViewController {
         
         if let images = self.images {
             for image in images {
-                let productImageVC = storyboard.instantiateViewController(withIdentifier: Storyboard.productImageViewController)
+                let productImageVC = storyboard.instantiateViewController(withIdentifier: Constants.Controllers.PRODUCT_IMAGE_VIEW_CONTROLLER)
                 controllers.append(productImageVC)
             }
         }

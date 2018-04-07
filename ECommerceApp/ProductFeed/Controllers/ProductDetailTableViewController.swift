@@ -14,10 +14,6 @@ class ProductDetailTableViewController: UITableViewController {
     
     @IBOutlet weak var productImagesHeaderView: ProductImagesHeaderView!
     
-    struct Storyboard {
-        static let showImagesPageVC = "ProductImagesPageViewController"
-        static let suggestionCell = "SuggestionTableViewCell"
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,13 +68,22 @@ class ProductDetailTableViewController: UITableViewController {
             
         } else {
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: Storyboard.suggestionCell, for: indexPath) as! SuggestionTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.SUGGESTION_CELL, for: indexPath) as! SuggestionTableViewCell
             
             // TODO: - set product suggestion data here.
             
             return cell
         }
             
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 3 {
+            return tableView.bounds.width + 68
+        } else {
+            return UITableViewAutomaticDimension
+        }
+        
     }
     
     // MARK: - UITableViewDelegate
@@ -89,6 +94,7 @@ class ProductDetailTableViewController: UITableViewController {
                 cell.collectionView.dataSource = self
                 cell.collectionView.delegate = self
                 cell.collectionView.reloadData()
+                cell.collectionView.isScrollEnabled = false
             }
         }
     }
@@ -96,7 +102,7 @@ class ProductDetailTableViewController: UITableViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Storyboard.showImagesPageVC {
+        if segue.identifier == Constants.Controllers.SHOW_IMAGES_PAGE_VC {
             if let imagesPageVC = segue.destination as? ProductImagesPageViewController {
                 imagesPageVC.images = product?.images
                 imagesPageVC.pageViewControllerDelegate = productImagesHeaderView
@@ -121,7 +127,7 @@ extension ProductDetailTableViewController : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SuggestionCollectionViewCell", for: indexPath) as! SuggestionCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.Cells.SUGGESTION_COLLECTION_VIEW_CELL, for: indexPath) as! SuggestionCollectionViewCell
         
         // TODO: - set real data for product suggestions
         let products = Product.fetchProducts()
@@ -136,3 +142,30 @@ extension ProductDetailTableViewController : UICollectionViewDataSource {
 extension ProductDetailTableViewController: UICollectionViewDelegate {
     
 }
+
+
+extension ProductDetailTableViewController : UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if let layout = collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.minimumLineSpacing = 5.0
+            layout.minimumInteritemSpacing = 2.5
+            let itemSize = (collectionView.bounds.width - 5.0) / 2.0
+            return CGSize(width: itemSize, height: itemSize)
+        }
+        
+       return CGSize.zero
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
