@@ -26,6 +26,7 @@
 		EFA4500B207D10B100AB6A1C /* BillingInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA4500A207D10B100AB6A1C /* BillingInformationCell.swift */; };
 		EFA4500D207D117D00AB6A1C /* CreditCardInformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA4500C207D117D00AB6A1C /* CreditCardInformationCell.swift */; };
 		EFA4500F207D12D400AB6A1C /* SubmitOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA4500E207D12D400AB6A1C /* SubmitOrderCell.swift */; };
+		EFA45013207D1FA500AB6A1C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFA45012207D1FA500AB6A1C /* GoogleService-Info.plist */; };
 		EFDE492C20731A3C0098A676 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDE492B20731A3C0098A676 /* Product.swift */; };
 		EFFC234D207C21A10089E2D9 /* ShoppingBagTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFC234C207C21A10089E2D9 /* ShoppingBagTableViewController.swift */; };
 		EFFC2353207C267C0089E2D9 /* NumberOfItemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFC2352207C267C0089E2D9 /* NumberOfItemsCell.swift */; };
@@ -57,6 +58,7 @@
 		EFA4500A207D10B100AB6A1C /* BillingInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillingInformationCell.swift; sourceTree = "<group>"; };
 		EFA4500C207D117D00AB6A1C /* CreditCardInformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardInformationCell.swift; sourceTree = "<group>"; };
 		EFA4500E207D12D400AB6A1C /* SubmitOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitOrderCell.swift; sourceTree = "<group>"; };
+		EFA45012207D1FA500AB6A1C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EFDE492B20731A3C0098A676 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		EFFC234C207C21A10089E2D9 /* ShoppingBagTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBagTableViewController.swift; sourceTree = "<group>"; };
 		EFFC2352207C267C0089E2D9 /* NumberOfItemsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOfItemsCell.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				EF1392532061C07F000ABBE6 /* AppDelegate.swift */,
 				EF13925A2061C07F000ABBE6 /* Assets.xcassets */,
 				EF13925F2061C07F000ABBE6 /* Info.plist */,
+				EFA45012207D1FA500AB6A1C /* GoogleService-Info.plist */,
 			);
 			path = ECommerceApp;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF13925E2061C07F000ABBE6 /* LaunchScreen.storyboard in Resources */,
+				EFA45013207D1FA500AB6A1C /* GoogleService-Info.plist in Resources */,
 				EF13925B2061C07F000ABBE6 /* Assets.xcassets in Resources */,
 				EF1392592061C07F000ABBE6 /* Main.storyboard in Resources */,
 			);
