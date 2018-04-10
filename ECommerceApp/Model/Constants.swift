@@ -10,7 +10,7 @@ import Foundation
 
 struct Constants {
     
-        struct ProductFeed {
+    struct ProductFeed {
         
         static let TITLE = "Merch!"
         
@@ -43,6 +43,9 @@ struct Constants {
             static let SUBTOTAL_CELL = "SubtotalCell"
             static let TOTAL_CELL = "TotalCell"
             static let CHECKOUT_CELL = "CheckoutCell"
+            static let BILLING_INFORMATION_CELL = "BillingInformationCell"
+            static let CREDIT_CARD_INFORMATION_CELL = "CreditCardInformationCell"
+            static let SUBMIT_ORDER_CELL = "SubmitOrderCell"
         }
         
         struct Controllers {
