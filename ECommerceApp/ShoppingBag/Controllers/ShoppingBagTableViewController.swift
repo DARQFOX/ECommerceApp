@@ -21,13 +21,33 @@ class ShoppingBagTableViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
     }
 
-    // MARK: - Table view data source
+    func fetchProducts() {
+        products = Product.fetchProducts()
+        tableView.reloadData()
+        
+        // Here we are going to call FIrebase ro backend data
+    }
 
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
+
+// MARK: - Table view data source
+
+extension ShoppingBagTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if let products = products {
@@ -69,23 +89,4 @@ class ShoppingBagTableViewController: UITableViewController {
             return cell
         }
     }
-    
-
-    func fetchProducts() {
-        products = Product.fetchProducts()
-        tableView.reloadData()
-        
-        // Here we are going to call FIrebase ro backend data
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
