@@ -23,6 +23,12 @@
 		EF67B023207857AA0020A885 /* SuggestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF67B022207857AA0020A885 /* SuggestionTableViewCell.swift */; };
 		EF9262922076A55700A8FCB7 /* ProductImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9262912076A55700A8FCB7 /* ProductImageViewController.swift */; };
 		EFDE492C20731A3C0098A676 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDE492B20731A3C0098A676 /* Product.swift */; };
+		EFFC234D207C21A10089E2D9 /* ShoppingBagTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFC234C207C21A10089E2D9 /* ShoppingBagTableViewController.swift */; };
+		EFFC2353207C267C0089E2D9 /* NumberOfItemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFC2352207C267C0089E2D9 /* NumberOfItemsCell.swift */; };
+		EFFC2355207C28F40089E2D9 /* ProductInBagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFC2354207C28F40089E2D9 /* ProductInBagCell.swift */; };
+		EFFC2357207C34730089E2D9 /* SubtotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFC2356207C34730089E2D9 /* SubtotalCell.swift */; };
+		EFFC2359207C358C0089E2D9 /* TotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFC2358207C358C0089E2D9 /* TotalCell.swift */; };
+		EFFC235B207C36630089E2D9 /* CheckoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFC235A207C36630089E2D9 /* CheckoutCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +50,12 @@
 		EF67B022207857AA0020A885 /* SuggestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionTableViewCell.swift; sourceTree = "<group>"; };
 		EF9262912076A55700A8FCB7 /* ProductImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageViewController.swift; sourceTree = "<group>"; };
 		EFDE492B20731A3C0098A676 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		EFFC234C207C21A10089E2D9 /* ShoppingBagTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBagTableViewController.swift; sourceTree = "<group>"; };
+		EFFC2352207C267C0089E2D9 /* NumberOfItemsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOfItemsCell.swift; sourceTree = "<group>"; };
+		EFFC2354207C28F40089E2D9 /* ProductInBagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInBagCell.swift; sourceTree = "<group>"; };
+		EFFC2356207C34730089E2D9 /* SubtotalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtotalCell.swift; sourceTree = "<group>"; };
+		EFFC2358207C358C0089E2D9 /* TotalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalCell.swift; sourceTree = "<group>"; };
+		EFFC235A207C36630089E2D9 /* CheckoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +88,7 @@
 		EF1392522061C07F000ABBE6 /* ECommerceApp */ = {
 			isa = PBXGroup;
 			children = (
+				EFFC234B207C21190089E2D9 /* ShoppingBag */,
 				EF54CBB6207441C9002DCB0E /* ProductFeed */,
 				EF54CBAD2073C5C5002DCB0E /* Views */,
 				EF54CBAC2073C5B4002DCB0E /* Model */,
@@ -135,6 +148,35 @@
 				EF67B022207857AA0020A885 /* SuggestionTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		EFFC234B207C21190089E2D9 /* ShoppingBag */ = {
+			isa = PBXGroup;
+			children = (
+				EFFC234F207C23270089E2D9 /* Controllers */,
+				EFFC234E207C231A0089E2D9 /* Views */,
+			);
+			path = ShoppingBag;
+			sourceTree = "<group>";
+		};
+		EFFC234E207C231A0089E2D9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EFFC2352207C267C0089E2D9 /* NumberOfItemsCell.swift */,
+				EFFC2354207C28F40089E2D9 /* ProductInBagCell.swift */,
+				EFFC2356207C34730089E2D9 /* SubtotalCell.swift */,
+				EFFC2358207C358C0089E2D9 /* TotalCell.swift */,
+				EFFC235A207C36630089E2D9 /* CheckoutCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EFFC234F207C23270089E2D9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EFFC234C207C21A10089E2D9 /* ShoppingBagTableViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,17 +252,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF54CBB22073D512002DCB0E /* ProductFeedCell.swift in Sources */,
+				EFFC235B207C36630089E2D9 /* CheckoutCell.swift in Sources */,
+				EFFC2357207C34730089E2D9 /* SubtotalCell.swift in Sources */,
 				EF9262922076A55700A8FCB7 /* ProductImageViewController.swift in Sources */,
 				EF1392542061C07F000ABBE6 /* AppDelegate.swift in Sources */,
+				EFFC2355207C28F40089E2D9 /* ProductInBagCell.swift in Sources */,
 				EF2B3CD82076B783003CC223 /* ProductImagesPageViewController.swift in Sources */,
+				EFFC2353207C267C0089E2D9 /* NumberOfItemsCell.swift in Sources */,
 				EFDE492C20731A3C0098A676 /* Product.swift in Sources */,
 				EF54CBB02073C651002DCB0E /* FeedTableViewController.swift in Sources */,
+				EFFC234D207C21A10089E2D9 /* ShoppingBagTableViewController.swift in Sources */,
 				EF54CBBF207445B2002DCB0E /* ProductDetailTableViewController.swift in Sources */,
 				EF67B01F207743480020A885 /* ProductImagesHeaderView.swift in Sources */,
 				EF67B02120784E020020A885 /* SuggestionCollectionViewCell.swift in Sources */,
 				EF54CBBB2074435B002DCB0E /* ProductDetailCell.swift in Sources */,
 				EF54CBBD20744395002DCB0E /* BuyButtonCell.swift in Sources */,
 				EF54CBB42073EA05002DCB0E /* Constants.swift in Sources */,
+				EFFC2359207C358C0089E2D9 /* TotalCell.swift in Sources */,
 				EF67B023207857AA0020A885 /* SuggestionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

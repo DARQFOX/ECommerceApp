@@ -50,7 +50,6 @@ class FeedTableViewController: UITableViewController {
         
         if let products = products {
             let product = products[indexPath.row]
-//            cell.configureCell(withProduct: product)
             cell.product = product
         }
 

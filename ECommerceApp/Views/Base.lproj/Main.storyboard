@@ -454,13 +454,13 @@
         <!--SHOPPING BAG-->
         <scene sceneID="pTw-BK-m6I">
             <objects>
-                <tableViewController id="9wX-PA-4lO" sceneMemberID="viewController">
+                <tableViewController id="9wX-PA-4lO" customClass="ShoppingBagTableViewController" customModule="ECommerceApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="H2x-v9-kbE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="5mh-JW-UvZ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NumberOfItemsCell" rowHeight="70" id="5mh-JW-UvZ" customClass="NumberOfItemsCell" customModule="ECommerceApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5mh-JW-UvZ" id="xgn-gn-Rbu">
@@ -482,8 +482,11 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="24" minY="0.0" maxX="24" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="numberOfItemsLabel" destination="JsM-lx-kZM" id="B0L-5w-lgu"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="145" id="8DW-iA-I5w">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductInBagCell" rowHeight="145" id="8DW-iA-I5w" customClass="ProductInBagCell" customModule="ECommerceApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="98" width="375" height="145"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8DW-iA-I5w" id="lrS-ks-QYc">
@@ -544,8 +547,14 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="24" minY="0.0" maxX="24" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="productImage" destination="nx0-uC-lZk" id="CTy-kF-Bva"/>
+                                    <outlet property="productNameLabel" destination="DtJ-JX-GzS" id="wBP-iR-Ktd"/>
+                                    <outlet property="productPriceLabel" destination="YC4-59-rhr" id="qvm-gr-FN1"/>
+                                    <outlet property="removeProductButton" destination="Tgt-MR-JQm" id="gnN-h4-5LY"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="124" id="R9B-fQ-CXr">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SubtotalCell" rowHeight="124" id="R9B-fQ-CXr" customClass="SubtotalCell" customModule="ECommerceApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="243" width="375" height="124"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R9B-fQ-CXr" id="Mii-D4-AHR">
@@ -618,8 +627,13 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="24" minY="0.0" maxX="24" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="estimatedShippingLabel" destination="zNl-QE-Y07" id="2CT-UQ-l3T"/>
+                                    <outlet property="subtotalLabel" destination="4Cl-7Y-G3y" id="Ldw-aP-mN0"/>
+                                    <outlet property="taxLabel" destination="nVK-bL-QN9" id="F4B-fc-y3d"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="73" id="V8R-Y1-8ov">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TotalCell" rowHeight="73" id="V8R-Y1-8ov" customClass="TotalCell" customModule="ECommerceApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="367" width="375" height="73"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V8R-Y1-8ov" id="hEz-X1-OSl">
@@ -651,8 +665,11 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="24" minY="0.0" maxX="24" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="totalLabel" destination="0d8-2E-EyO" id="aOw-mN-Cbf"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="65" id="Syf-EA-HcA">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CheckoutCell" rowHeight="65" id="Syf-EA-HcA" customClass="CheckoutCell" customModule="ECommerceApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="440" width="375" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Syf-EA-HcA" id="ZK4-tH-Hm3">
@@ -680,6 +697,9 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="24" minY="0.0" maxX="24" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="checkoutButton" destination="Cvt-wD-Qrc" id="PmF-fg-WfP"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
