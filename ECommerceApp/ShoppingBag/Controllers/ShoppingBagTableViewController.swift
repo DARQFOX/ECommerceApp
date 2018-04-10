@@ -10,10 +10,12 @@ import UIKit
 
 class ShoppingBagTableViewController: UITableViewController {
     
-    var product: Product!
+    var products: [Product]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetchProducts()
         
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -28,58 +30,50 @@ class ShoppingBagTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 5
+        if let products = products {
+            return products.count + 4
+        } else {
+            return 1
+        }
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let products = products else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ShoppingBag.Cells.NUMBER_OF_ITEMS_CELL, for: indexPath) as! NumberOfItemsCell
+            cell.numberOfItemsLabel.text = "0 ITEMs"
+            return cell
+        }
         
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ShoppingBag.Cells.NUMBER_OF_ITEMS_CELL, for: indexPath) as! NumberOfItemsCell
             
-            if let product = product{
-                cell.product = product
-            }
-            
+            cell.numberOfItemsLabel.text = products.count == 1 ? "\(products.count) ITEM" : "\(products.count) ITEMS"
             return cell
-        } else if indexPath.row == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ShoppingBag.Cells.PRODUCT_IN_BAG_CELL, for: indexPath) as! ProductInBagCell
             
-            if let product = product {
-                cell.product = product
-            }
-            
-            return cell
-        } else if indexPath.row == 2 {
+        } else if indexPath.row == products.count + 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ShoppingBag.Cells.SUBTOTAL_CELL, for: indexPath) as! SubtotalCell
             
-            if let product = product {
-                cell.product = product
-            }
-            
             return cell
-        } else if indexPath.row == 3 {
+        } else if indexPath.row == products.count + 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ShoppingBag.Cells.TOTAL_CELL, for: indexPath) as! TotalCell
             
-            if let product = product {
-                cell.product = product
-            }
+            return cell
+        } else if indexPath.row == products.count + 3 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ShoppingBag.Cells.CHECKOUT_CELL, for: indexPath) as! CheckoutCell
             
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ShoppingBag.Cells.CHECKOUT_CELL, for: indexPath) as! CheckoutCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ShoppingBag.Cells.PRODUCT_IN_BAG_CELL, for: indexPath) as! ProductInBagCell
             
-            if let product = product {
-                cell.product = product
-            }
-            
+            cell.product = products[indexPath.row - 1]
             return cell
         }
-        
     }
     
+
     func fetchProducts() {
-//        products = Product.fetchProducts()
-//        tableView.reloadData()
+        products = Product.fetchProducts()
+        tableView.reloadData()
         
         // Here we are going to call FIrebase ro backend data
     }

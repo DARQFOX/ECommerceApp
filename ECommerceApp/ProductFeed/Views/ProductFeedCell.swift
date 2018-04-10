@@ -14,7 +14,7 @@ class ProductFeedCell: UITableViewCell {
     @IBOutlet weak var productPriceLabel: UILabel!
     
    
-    var product: Product? {
+    var product: Product! {
         didSet {
             updateUI()
         }

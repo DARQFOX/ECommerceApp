@@ -14,7 +14,7 @@ class NumberOfItemsCell: UITableViewCell {
     
     var product: Product! {
         didSet {
-            // numberOfItemsLabel.text = 
+//            numberOfItemsLabel.text = 
         }
     }
 

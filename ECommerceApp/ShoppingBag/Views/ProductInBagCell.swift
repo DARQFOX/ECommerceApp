@@ -25,7 +25,7 @@ class ProductInBagCell: UITableViewCell {
     func updateUI() {
         productImage.image = product!.images!.first
         productNameLabel.text = product!.name
-        productPriceLabel.text = "$\(product!.price!)"
+        productPriceLabel.text = "$\(product.price!)"
         removeProductButton.setTitle("REMOVE", for: [])
     }
 
