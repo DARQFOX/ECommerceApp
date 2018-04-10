@@ -10,12 +10,13 @@ import UIKit
 
 class ShoppingBagTableViewController: UITableViewController {
     
-    var product: Product?
+    var product: Product!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    print("ViewController is connected")
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
 
     // MARK: - Table view data source
@@ -33,7 +34,7 @@ class ShoppingBagTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "NumberOfItemsCell", for: indexPath) as! NumberOfItemsCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ShoppingBag.Cells.NUMBER_OF_ITEMS_CELL, for: indexPath) as! NumberOfItemsCell
             
             if let product = product{
                 cell.product = product
@@ -41,7 +42,7 @@ class ShoppingBagTableViewController: UITableViewController {
             
             return cell
         } else if indexPath.row == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ProductInBagCell", for: indexPath) as! ProductInBagCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ShoppingBag.Cells.PRODUCT_IN_BAG_CELL, for: indexPath) as! ProductInBagCell
             
             if let product = product {
                 cell.product = product
@@ -49,7 +50,7 @@ class ShoppingBagTableViewController: UITableViewController {
             
             return cell
         } else if indexPath.row == 2 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "SubtotalCell", for: indexPath) as! SubtotalCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ShoppingBag.Cells.SUBTOTAL_CELL, for: indexPath) as! SubtotalCell
             
             if let product = product {
                 cell.product = product
@@ -57,7 +58,7 @@ class ShoppingBagTableViewController: UITableViewController {
             
             return cell
         } else if indexPath.row == 3 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TotalCell", for: indexPath) as! TotalCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ShoppingBag.Cells.TOTAL_CELL, for: indexPath) as! TotalCell
             
             if let product = product {
                 cell.product = product
@@ -65,7 +66,7 @@ class ShoppingBagTableViewController: UITableViewController {
             
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CheckoutCell", for: indexPath) as! CheckoutCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ShoppingBag.Cells.CHECKOUT_CELL, for: indexPath) as! CheckoutCell
             
             if let product = product {
                 cell.product = product
@@ -75,7 +76,13 @@ class ShoppingBagTableViewController: UITableViewController {
         }
         
     }
-
+    
+    func fetchProducts() {
+//        products = Product.fetchProducts()
+//        tableView.reloadData()
+        
+        // Here we are going to call FIrebase ro backend data
+    }
 
     /*
     // MARK: - Navigation

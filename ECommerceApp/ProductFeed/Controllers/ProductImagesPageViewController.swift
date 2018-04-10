@@ -26,7 +26,7 @@ class ProductImagesPageViewController: UIPageViewController {
         
         if let images = self.images {
             for image in images {
-                let productImageVC = storyboard.instantiateViewController(withIdentifier: Constants.Controllers.PRODUCT_IMAGE_VIEW_CONTROLLER)
+                let productImageVC = storyboard.instantiateViewController(withIdentifier: Constants.ProductFeed.Controllers.PRODUCT_IMAGE_VIEW_CONTROLLER)
                 controllers.append(productImageVC)
             }
         }
