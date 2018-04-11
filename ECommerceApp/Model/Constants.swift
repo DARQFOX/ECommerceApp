@@ -12,7 +12,7 @@ struct Constants {
     
     struct ProductFeed {
         
-        static let TITLE = "Merch!"
+        static let TITLE = "Merch"
         
         struct Cells {
             static let PRODUCT_FEED_CELL = "ProductFeedCell"

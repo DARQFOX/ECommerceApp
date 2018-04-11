@@ -16,7 +16,6 @@ class FeedTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.delegate = self
-        
         navigationItem.title = Constants.ProductFeed.TITLE
         fetchProducts()
         
