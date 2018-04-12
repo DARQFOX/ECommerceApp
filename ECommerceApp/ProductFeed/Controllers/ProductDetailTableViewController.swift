@@ -43,20 +43,19 @@ class ProductDetailTableViewController: UITableViewController {
         if indexPath.row == 0 {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ProductFeed.Cells.PRODUCT_DETAIL_CELL, for: indexPath) as! ProductDetailCell
-            if product != nil {
+            if let product = product {
                 cell.product = product
             }
             
-            cell.selectionStyle = .none
             return cell
             
         } else if indexPath.row == 1 {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ProductFeed.Cells.BUY_BUTTON_CELL, for: indexPath) as! BuyButtonCell
-            if product != nil {
+            if let product = product {
                 cell.product = product
             }
-            cell.selectionStyle = .none
+            
             return cell
             
         } else if indexPath.row == 2 {

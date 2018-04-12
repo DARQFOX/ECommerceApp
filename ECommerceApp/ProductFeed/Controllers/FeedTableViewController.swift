@@ -55,18 +55,6 @@ class FeedTableViewController: UITableViewController {
         return cell
     }
     
- 
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-////         1.
-//        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//        let toViewController = storyboard.instantiateViewController(withIdentifier: "ProductDetailTableViewController") as! ProductDetailTableViewController
-//        toViewController.product = products?[indexPath.row]
-//        navigationController?.pushViewController(toViewController, animated: true)
-//
-//
-//    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let products = self.products else { return }
 

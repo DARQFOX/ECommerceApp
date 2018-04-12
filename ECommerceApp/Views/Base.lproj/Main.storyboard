@@ -203,10 +203,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3i6-DG-W3i">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z0G-jQ-SHY">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
@@ -258,7 +254,7 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5040373322147651" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.85798552852348997" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="S7h-6Q-CbL" firstAttribute="top" secondItem="z0G-jQ-SHY" secondAttribute="top" id="6KV-ht-NXP"/>
                                     <constraint firstAttribute="bottom" secondItem="S7h-6Q-CbL" secondAttribute="bottom" constant="14" id="Myu-MA-hkC"/>
@@ -269,13 +265,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="3i6-DG-W3i" firstAttribute="trailing" secondItem="fnW-2o-Szc" secondAttribute="trailing" id="2kL-Ia-OPI"/>
-                            <constraint firstItem="3i6-DG-W3i" firstAttribute="top" secondItem="FYC-jz-iAY" secondAttribute="top" id="NNH-3t-Zh9"/>
-                            <constraint firstItem="3i6-DG-W3i" firstAttribute="leading" secondItem="fnW-2o-Szc" secondAttribute="leading" id="ZuI-pQ-HdU"/>
                             <constraint firstItem="z0G-jQ-SHY" firstAttribute="trailing" secondItem="fnW-2o-Szc" secondAttribute="trailing" id="jjw-TF-gYd"/>
                             <constraint firstItem="z0G-jQ-SHY" firstAttribute="leading" secondItem="fnW-2o-Szc" secondAttribute="leading" id="m9b-Wr-nvF"/>
                             <constraint firstItem="z0G-jQ-SHY" firstAttribute="bottom" secondItem="fnW-2o-Szc" secondAttribute="bottom" id="mTx-ul-Fub"/>
-                            <constraint firstItem="3i6-DG-W3i" firstAttribute="bottom" secondItem="fnW-2o-Szc" secondAttribute="bottom" id="nHk-rX-NrV"/>
                             <constraint firstItem="z0G-jQ-SHY" firstAttribute="top" secondItem="FYC-jz-iAY" secondAttribute="top" id="tF5-S3-fq4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fnW-2o-Szc"/>
