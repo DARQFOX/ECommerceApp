@@ -488,7 +488,7 @@
         <!--CREATE NEW ACCOUNT-->
         <scene sceneID="5HG-zV-haJ">
             <objects>
-                <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="b9v-Lz-ZwL" sceneMemberID="viewController">
+                <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="b9v-Lz-ZwL" customClass="SignupTableViewController" customModule="ECommerceApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="kcV-O2-hcu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -513,6 +513,9 @@
                                     <state key="normal" title="CHANGE PROFILE PICTURE">
                                         <color key="titleColor" red="0.8666666666666667" green="0.18823529411764706" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
+                                    <connections>
+                                        <action selector="changeProfilePicDidTap:" destination="b9v-Lz-ZwL" eventType="touchUpInside" id="L3h-Cb-sxi"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -677,6 +680,9 @@
                                                     <state key="normal" title="CREATE YOUR ACCOUNT">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="createNewAccountDidTap:" destination="b9v-Lz-ZwL" eventType="touchUpInside" id="giw-gn-Tzx"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -700,6 +706,13 @@
                             <color key="tintColor" red="0.85098039215686272" green="0.18431372549019609" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="createPasswordTextField" destination="FWT-yu-6mR" id="Esq-6m-vYx"/>
+                        <outlet property="emailTextField" destination="fF6-yD-Gx0" id="Lyc-9Y-aMC"/>
+                        <outlet property="fullNameTextField" destination="aLy-MY-xcr" id="1Lp-FV-EuC"/>
+                        <outlet property="profileImageView" destination="0II-nd-Qd1" id="fba-w2-WYu"/>
+                        <outlet property="usernameTextField" destination="iqh-eV-iAN" id="XgS-Ek-EqN"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dwa-JH-jtV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

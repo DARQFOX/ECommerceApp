@@ -15,7 +15,7 @@ class FeedTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+
         // one time sign-in -> if the user logs in already or not
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {

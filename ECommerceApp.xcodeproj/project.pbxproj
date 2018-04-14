@@ -11,6 +11,7 @@
 		EF1392592061C07F000ABBE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF1392572061C07F000ABBE6 /* Main.storyboard */; };
 		EF13925B2061C07F000ABBE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF13925A2061C07F000ABBE6 /* Assets.xcassets */; };
 		EF13925E2061C07F000ABBE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF13925C2061C07F000ABBE6 /* LaunchScreen.storyboard */; };
+		EF243B452082648200D9BA5D /* SignupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF243B442082648200D9BA5D /* SignupTableViewController.swift */; };
 		EF2B3CD82076B783003CC223 /* ProductImagesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2B3CD72076B783003CC223 /* ProductImagesPageViewController.swift */; };
 		EF54CBB02073C651002DCB0E /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF54CBAF2073C651002DCB0E /* FeedTableViewController.swift */; };
 		EF54CBB22073D512002DCB0E /* ProductFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF54CBB12073D512002DCB0E /* ProductFeedCell.swift */; };
@@ -52,6 +53,7 @@
 		EF13925A2061C07F000ABBE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF13925D2061C07F000ABBE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF13925F2061C07F000ABBE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF243B442082648200D9BA5D /* SignupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupTableViewController.swift; sourceTree = "<group>"; };
 		EF2B3CD72076B783003CC223 /* ProductImagesPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImagesPageViewController.swift; sourceTree = "<group>"; };
 		EF54CBAF2073C651002DCB0E /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		EF54CBB12073D512002DCB0E /* ProductFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFeedCell.swift; sourceTree = "<group>"; };
@@ -132,7 +134,7 @@
 		EF1392522061C07F000ABBE6 /* ECommerceApp */ = {
 			isa = PBXGroup;
 			children = (
-				EF639277207D5F2E00624803 /* Login */,
+				EF639277207D5F2E00624803 /* UserAuthentication */,
 				EFFC234B207C21190089E2D9 /* ShoppingBag */,
 				EF54CBB6207441C9002DCB0E /* ProductFeed */,
 				EF54CBAD2073C5C5002DCB0E /* Views */,
@@ -200,12 +202,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		EF639277207D5F2E00624803 /* Login */ = {
+		EF639277207D5F2E00624803 /* UserAuthentication */ = {
 			isa = PBXGroup;
 			children = (
 				EF639278207D5F4F00624803 /* WelcomeScreenViewController.swift */,
+				EF243B442082648200D9BA5D /* SignupTableViewController.swift */,
 			);
-			path = Login;
+			path = UserAuthentication;
 			sourceTree = "<group>";
 		};
 		EFFC234B207C21190089E2D9 /* ShoppingBag */ = {
@@ -392,6 +395,7 @@
 				EFA4500D207D117D00AB6A1C /* CreditCardInformationCell.swift in Sources */,
 				EF54CBB02073C651002DCB0E /* FeedTableViewController.swift in Sources */,
 				EFE793F2207FCF0600957FDC /* ECFirebaseImage.swift in Sources */,
+				EF243B452082648200D9BA5D /* SignupTableViewController.swift in Sources */,
 				EFE793F0207ED8F500957FDC /* ECFirebaseReference.swift in Sources */,
 				EFFC234D207C21A10089E2D9 /* ShoppingBagTableViewController.swift in Sources */,
 				EF54CBBF207445B2002DCB0E /* ProductDetailTableViewController.swift in Sources */,
