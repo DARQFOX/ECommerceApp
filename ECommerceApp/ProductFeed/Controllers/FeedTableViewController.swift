@@ -7,10 +7,26 @@
 //
 
 import UIKit
+import Firebase
 
 class FeedTableViewController: UITableViewController {
     
     var products: [Product]?
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // one time sign-in -> if the user logs in already or not
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            if user != nil {
+                // we do have the user, the user did log in
+                // TODO: - fetch posts, update productfeed
+            } else {
+                // the user has not logged in or is already logged out
+                self.performSegue(withIdentifier: Constants.ProductFeed.Segues.SHOW_WELCOME_SCREEN, sender: nil)
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

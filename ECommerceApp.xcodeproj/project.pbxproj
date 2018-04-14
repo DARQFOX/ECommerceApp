@@ -18,7 +18,7 @@
 		EF54CBBB2074435B002DCB0E /* ProductDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF54CBBA2074435B002DCB0E /* ProductDetailCell.swift */; };
 		EF54CBBD20744395002DCB0E /* BuyButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF54CBBC20744395002DCB0E /* BuyButtonCell.swift */; };
 		EF54CBBF207445B2002DCB0E /* ProductDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF54CBBE207445B2002DCB0E /* ProductDetailTableViewController.swift */; };
-		EF639279207D5F4F00624803 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639278207D5F4F00624803 /* LoginScreenViewController.swift */; };
+		EF639279207D5F4F00624803 /* WelcomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF639278207D5F4F00624803 /* WelcomeScreenViewController.swift */; };
 		EF63927B207D615700624803 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF63927A207D615700624803 /* RoundedButton.swift */; };
 		EF67B01F207743480020A885 /* ProductImagesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF67B01E207743480020A885 /* ProductImagesHeaderView.swift */; };
 		EF67B02120784E020020A885 /* SuggestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF67B02020784E020020A885 /* SuggestionCollectionViewCell.swift */; };
@@ -59,7 +59,7 @@
 		EF54CBBA2074435B002DCB0E /* ProductDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailCell.swift; sourceTree = "<group>"; };
 		EF54CBBC20744395002DCB0E /* BuyButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyButtonCell.swift; sourceTree = "<group>"; };
 		EF54CBBE207445B2002DCB0E /* ProductDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailTableViewController.swift; sourceTree = "<group>"; };
-		EF639278207D5F4F00624803 /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
+		EF639278207D5F4F00624803 /* WelcomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenViewController.swift; sourceTree = "<group>"; };
 		EF63927A207D615700624803 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		EF67B01E207743480020A885 /* ProductImagesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImagesHeaderView.swift; sourceTree = "<group>"; };
 		EF67B02020784E020020A885 /* SuggestionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -203,7 +203,7 @@
 		EF639277207D5F2E00624803 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				EF639278207D5F4F00624803 /* LoginScreenViewController.swift */,
+				EF639278207D5F4F00624803 /* WelcomeScreenViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -379,7 +379,7 @@
 			files = (
 				EF54CBB22073D512002DCB0E /* ProductFeedCell.swift in Sources */,
 				EFA4500B207D10B100AB6A1C /* BillingInformationCell.swift in Sources */,
-				EF639279207D5F4F00624803 /* LoginScreenViewController.swift in Sources */,
+				EF639279207D5F4F00624803 /* WelcomeScreenViewController.swift in Sources */,
 				EFFC235B207C36630089E2D9 /* CheckoutCell.swift in Sources */,
 				EFFC2357207C34730089E2D9 /* SubtotalCell.swift in Sources */,
 				EFA45007207D0F6F00AB6A1C /* CheckoutTableViewController.swift in Sources */,

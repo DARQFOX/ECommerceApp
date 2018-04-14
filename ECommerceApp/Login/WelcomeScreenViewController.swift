@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginScreenViewController: UIViewController {
+class WelcomeScreenViewController: UIViewController {
     
     @IBOutlet weak var createNewAccountButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!

@@ -190,15 +190,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="MeE-AN-rZd"/>
+                    <connections>
+                        <segue destination="HOx-Er-01f" kind="presentation" identifier="ShowWelcomeScreen" id="J6K-iN-NRa"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qKA-9P-Yd6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1494" y="-1773"/>
         </scene>
-        <!--Login Screen View Controller-->
+        <!--Welcome Screen View Controller-->
         <scene sceneID="FYt-p7-sB3">
             <objects>
-                <viewController id="HOx-Er-01f" customClass="LoginScreenViewController" customModule="ECommerceApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HOx-Er-01f" customClass="WelcomeScreenViewController" customModule="ECommerceApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FYC-jz-iAY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -290,18 +293,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="p3c-pE-lL0" customClass="ProductImagesHeaderView" customModule="ECommerceApp" customModuleProvider="target">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="p3c-pE-lL0" customClass="ProductImagesHeaderView" customModule="ECommerceApp" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAX-NT-Ryb">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="908"/>
                                     <connections>
                                         <segue destination="jbD-w2-Zd4" kind="embed" identifier="ProductImagesPageViewController" id="Z2i-mL-Tti"/>
                                     </connections>
                                 </containerView>
                                 <pageControl opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="4ZZ-jd-0Sg">
-                                    <rect key="frame" x="168" y="338" width="39" height="37"/>
+                                    <rect key="frame" x="168" y="871" width="39" height="37"/>
                                     <color key="tintColor" red="0.13836486319999999" green="0.46711517070000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="currentPageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -485,7 +488,7 @@
         <!--CREATE NEW ACCOUNT-->
         <scene sceneID="5HG-zV-haJ">
             <objects>
-                <tableViewController id="b9v-Lz-ZwL" sceneMemberID="viewController">
+                <tableViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="b9v-Lz-ZwL" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="kcV-O2-hcu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
