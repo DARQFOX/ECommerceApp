@@ -13,6 +13,7 @@ class FeedTableViewController: UITableViewController {
     
     var products: [Product]?
     
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
@@ -23,7 +24,7 @@ class FeedTableViewController: UITableViewController {
                 // TODO: - fetch posts, update productfeed
             } else {
                 // the user has not logged in or is already logged out
-                self.performSegue(withIdentifier: Constants.ProductFeed.Segues.SHOW_WELCOME_SCREEN, sender: nil)
+                self.performSegue(withIdentifier: Constants.UserAuthentication.Segues.SHOW_WELCOME_SCREEN, sender: nil)
             }
         }
     }
@@ -40,6 +41,11 @@ class FeedTableViewController: UITableViewController {
         
     }
     
+    @IBAction func logoutDitTouch(_ sender: Any) {
+        try! Auth.auth().signOut()
+        
+        self.performSegue(withIdentifier: Constants.UserAuthentication.Segues.SHOW_WELCOME_SCREEN, sender: nil)
+    }
     func fetchProducts() {
         products = Product.fetchProducts()
         tableView.reloadData()

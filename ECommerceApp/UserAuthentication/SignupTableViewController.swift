@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignupTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -15,9 +16,6 @@ class SignupTableViewController: UITableViewController, UIImagePickerControllerD
     @IBOutlet weak var fullNameTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var createPasswordTextField: UITextField!
-    
-    
-    var profilePic: UIImage!
     
     
     @IBAction func changeProfilePicDidTap(_ sender: Any) {
@@ -35,6 +33,38 @@ class SignupTableViewController: UITableViewController, UIImagePickerControllerD
         present(imagePicker, animated: true, completion: nil)
     }
     @IBAction func createNewAccountDidTap(_ sender: Any) {
+        if (emailTextField.text?.isValidEmailAddress)! && (createPasswordTextField.text?.count)! > 6 && (usernameTextField.text?.count)! > 6 && fullNameTextField.text != "" && profileImageView != nil {
+            let username = usernameTextField.text!
+            let email = emailTextField.text!
+            let password = createPasswordTextField.text!
+            let fullName = fullNameTextField.text!
+            
+            
+            Auth.auth().createUser(withEmail: email, password: password) { (User, error) in
+                
+                if error != nil {
+                    print(error)
+                } else {
+                    let newUser = ECUser(uid: (User?.uid)!, username: username, profileImage: self.profileImageView.image!, email: email, fullName: fullName)
+                    newUser.save(completion: { (error) in
+                        if error != nil {
+                            print(error)
+                        } else {
+                            // Successfully signed up a new account
+                            // log in the user to use the app
+                            Auth.auth().signIn(withEmail: email, password: password, completion: { (User, error) in
+                                if let error = error {
+                                    print(error)
+                                } else {
+                                    self.dismiss(animated: false, completion: nil)
+                                }
+                            })
+                        }
+                    })
+                }
+                
+            }
+        }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -50,5 +80,48 @@ class SignupTableViewController: UITableViewController, UIImagePickerControllerD
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
-    
 }
+
+extension String {
+    var isValidEmailAddress: Bool {
+        let types: NSTextCheckingResult.CheckingType = [.link]
+        let linkDetector = try? NSDataDetector(types: types.rawValue)
+        let range = NSRange(location: 0, length: self.count)
+        let result = linkDetector?.firstMatch(in: self, options: .reportCompletion, range: range)
+        let scheme = result?.url?.scheme ?? ""
+        return scheme == "mailto" && result?.range.length == self.count
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

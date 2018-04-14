@@ -20,7 +20,7 @@ class ProductFeedCell: UITableViewCell {
         }
         
     }
-        
+    
     func updateUI() {
         
         productImageView.image = product!.images?.first

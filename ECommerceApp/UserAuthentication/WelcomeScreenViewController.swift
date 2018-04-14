@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class WelcomeScreenViewController: UIViewController {
     
@@ -18,6 +19,14 @@ class WelcomeScreenViewController: UIViewController {
         super.viewDidLoad()
         
         buttonUILayout()
+        
+        Auth.auth().addStateDidChangeListener { (Auth, User) in
+            if User != nil {
+                self.dismiss(animated: false, completion: nil)
+            }
+        }
+        
+        
         
     }
     

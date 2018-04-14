@@ -189,7 +189,20 @@
                             <outlet property="delegate" destination="Y4J-bh-qFH" id="m3a-nw-Nz0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="MeE-AN-rZd"/>
+                    <navigationItem key="navigationItem" id="MeE-AN-rZd">
+                        <barButtonItem key="leftBarButtonItem" title="LogOut" style="plain" id="lFz-jk-UP7">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oql-XH-mnt">
+                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" red="0.83137254900000002" green="0.16078431369999999" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutDitTouch:" destination="Y4J-bh-qFH" eventType="touchUpInside" id="obT-Fe-d8T"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="HOx-Er-01f" kind="presentation" identifier="ShowWelcomeScreen" id="J6K-iN-NRa"/>
                     </connections>
@@ -293,18 +306,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="p3c-pE-lL0" customClass="ProductImagesHeaderView" customModule="ECommerceApp" customModuleProvider="target">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="p3c-pE-lL0" customClass="ProductImagesHeaderView" customModule="ECommerceApp" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAX-NT-Ryb">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="908"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                     <connections>
                                         <segue destination="jbD-w2-Zd4" kind="embed" identifier="ProductImagesPageViewController" id="Z2i-mL-Tti"/>
                                     </connections>
                                 </containerView>
                                 <pageControl opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="4ZZ-jd-0Sg">
-                                    <rect key="frame" x="168" y="871" width="39" height="37"/>
+                                    <rect key="frame" x="168" y="338" width="39" height="37"/>
                                     <color key="tintColor" red="0.13836486319999999" green="0.46711517070000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="currentPageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

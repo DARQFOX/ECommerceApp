@@ -30,7 +30,6 @@ struct Constants {
         
         struct Segues {
             static let DETAIL_VIEW_SEGUE = "DetailViewSegue"
-            static let SHOW_WELCOME_SCREEN = "ShowWelcomeScreen"
         }
     }
     
@@ -58,6 +57,11 @@ struct Constants {
         }
     }
     
+    struct UserAuthentication {
+        struct Segues {
+            static let SHOW_WELCOME_SCREEN = "ShowWelcomeScreen"
+        }
+    }
     
 }
 
