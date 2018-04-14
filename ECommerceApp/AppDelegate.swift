@@ -21,22 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         configureAppearance()
-        
-//        let fireImage = ECFirebaseImage(image: UIImage(named: "s1")!)
-//        fireImage.saveProfileImage("s1") { (error) in
-//            print("********** ERROR UPLOADING IMAGE:")
-//            print(error)
-//        }
-        
-//        ECDatabaseReference.users(uid: "uid2Billy").reference().setValue("scrumdiliumptious")
-//
-//        let adminValue = [
-//            "username" : "JimBob",
-//            "uid" : "3432"
-//        ]
-//
-//        ECDatabaseReference.users(uid: "Admin").reference().setValue(adminValue)
-        
+
         return true
     }
 

@@ -26,9 +26,10 @@ class ECFirebaseImage {
         
             // To save in Firebase
             // 1. Get the reference
+            
             ref = ECStorageReference.profileImages.reference().child(userUID)
             downloadString = ref.description
-            
+    
             // 2. Save the data to the reference
             ref.putData(imageData, metadata: nil) { (metadata, error) in
                 completion(error)
