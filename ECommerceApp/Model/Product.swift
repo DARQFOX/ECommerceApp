@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class Product {
     var uid: String?
@@ -16,6 +17,9 @@ class Product {
     var description: String?
     var detailed: String?
     var relatedProductUID: [String]?
+    
+    var imageLinks: [String]?
+    var featuredImageLink: String?
     
     init(uid: String?, name: String?, images: [UIImage]?, price: Double?, description: String?, detailed: String?, relatedProductUID: [String]? = ["875942-100", "880843-003", "384664-113", "805144-852"]) {
         
@@ -69,3 +73,76 @@ class Product {
         return shoes
     }
 }
+
+
+// MARK: - Firebase
+
+// Steps for providing products to user without an admin.
+// 1. Create some prototype products locally
+// 2. Upload the products programmatically
+// 3. Fetch those products into customer's feed
+
+extension Product {
+    var ref: DatabaseReference! {
+        get {
+            if let uid = self.uid {
+                return ECDatabaseReference.products(uid: uid).reference()
+            } else {
+                return nil
+            }
+        }
+    }
+    
+    // 1.
+    
+    func saveProduct(completion: @escaping (Error?) -> Void) {
+        // Save Images to Firebase Storage with the product UID
+        if let images = images {
+            for image in images {
+                let firebaseImage = ECFirebaseImage(image: image)
+                let randomID = ref.childByAutoId().key
+                firebaseImage.save(randomID) { (error) in
+                    // save the image downloadURL to product database
+                    self.ref.child("images").childByAutoId().setValue(firebaseImage.downloadURL)
+                    completion(error)
+                }
+            }
+        }
+        
+        self.ref.setValue(productToDictionary())
+    }
+    
+    func productToDictionary() -> [String : Any] {
+        guard let uid = self.uid, let name = self.name, let price = price, let description = description, let detailed = detailed, let relatedProductUID = relatedProductUID else {
+            return [:]
+    }
+        
+        return [
+            "uid" : uid,
+            "name" : name,
+            "price" : price,
+            "description" : description,
+            "detailed" : detailed,
+            "relatedProductUID" : relatedProductUID,
+        ]
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

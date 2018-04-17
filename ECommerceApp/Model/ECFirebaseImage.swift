@@ -12,7 +12,7 @@ import Firebase
 class ECFirebaseImage {
     
     var image: UIImage
-    var downloadURL: URL?
+    var downloadURL: String?
     var downloadString: String!
     var ref: StorageReference!
     
@@ -34,6 +34,18 @@ class ECFirebaseImage {
             ref.putData(imageData, metadata: nil) { (metadata, error) in
                 completion(error)
             }
+        }
+    }
+    
+    func save(_ uid: String, completion: @escaping (Error?) -> Void) {
+        let resizedImage = image.resize()
+        let imageData = UIImageJPEGRepresentation(resizedImage, 0.9)
+        
+        ref = ECStorageReference.images.reference().child(uid)
+        downloadURL = ref.description
+        
+        ref.putData(imageData!, metadata: nil) { (metaData, error) in
+            completion(error)
         }
     }
 }

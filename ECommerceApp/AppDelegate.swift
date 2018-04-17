@@ -19,8 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
-        
         configureAppearance()
+        
+        // Create products locally
+//        let products = Product.fetchProducts()
+//        for product in products {
+//            product.saveProduct { (error) in
+//
+//            }
+//        }
 
         return true
     }

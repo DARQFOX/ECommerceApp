@@ -12,6 +12,7 @@ import Firebase
 enum ECDatabaseReference {
     case root
     case users(uid: String)
+    case products(uid: String)
     
     func reference() -> DatabaseReference {
         switch self {
@@ -32,6 +33,8 @@ enum ECDatabaseReference {
             return ""
         case .users(let uid):
             return "users/\(uid)"
+        case .products(let uid):
+            return "products/\(uid)"
         }
     }
 }
@@ -39,6 +42,7 @@ enum ECDatabaseReference {
 enum ECStorageReference {
     case root
     case profileImages
+    case images 
     
     func reference() -> StorageReference {
         switch self {
@@ -59,6 +63,8 @@ enum ECStorageReference {
             return ""
         case .profileImages:
             return "profileImages"
+        case .images:
+            return "images"
         }
     }
 }
