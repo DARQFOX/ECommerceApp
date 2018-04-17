@@ -28,6 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //
 //            }
 //        }
+        
+        Product.fetchProductsFromFirebase { (products) in
+            print(products)
+        }
 
         return true
     }

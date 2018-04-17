@@ -17,7 +17,6 @@ class Product {
     var description: String?
     var detailed: String?
     var relatedProductUID: [String]?
-    
     var imageLinks: [String]?
     var featuredImageLink: String?
     
@@ -79,7 +78,7 @@ class Product {
 
 // Steps for providing products to user without an admin.
 // 1. Create some prototype products locally
-// 2. Upload the products programmatically
+// 2. Upload the products programmatically -> App Delegate
 // 3. Fetch those products into customer's feed
 
 extension Product {
@@ -90,6 +89,48 @@ extension Product {
             } else {
                 return nil
             }
+        }
+    }
+    
+    convenience init(dictionary: [String : Any]) {
+        let uid = dictionary["uid"] as? String
+        let name = dictionary["name"] as? String
+        let price = dictionary["price"] as? Double
+        let description = dictionary["description"] as? String
+        let detailedDescription = dictionary["detailed"] as? String
+        let relatedProductUID = dictionary["relatedProductUID"] as? [String]
+        
+        var imgLinks = [String]()
+        if let imgLinkDict = dictionary["images"] as? [String : Any] {
+            for (_, imgLink) in imgLinkDict {
+                imgLinks.append(imgLink as! String)
+            }
+        }
+        
+        self.init(uid: uid, name: name, images: nil, price: price, description: description, detailed: detailedDescription, relatedProductUID: relatedProductUID)
+        
+        self.imageLinks = imgLinks
+        self.featuredImageLink = imgLinks[0]
+        
+    }
+    
+    // 3.
+    
+    class func fetchProductsFromFirebase(completion: @escaping ([Product]) -> Void) {
+        Database.database().reference().child("products").observe(.value) { (snapshot) in
+            
+            var products = [Product]()
+            for childSnapshot in snapshot.children {
+                if let childSnapshot = childSnapshot as? DataSnapshot, let dictionary = childSnapshot.value as? [String : Any] {
+                    // Turn the dictionary into a local instance of Product
+                    let product = Product(dictionary: dictionary)
+                    // Append the product into products
+                    products.append(product)
+                }
+            }
+            
+            completion(products)
+            
         }
     }
     
