@@ -46,9 +46,14 @@ class FeedTableViewController: UITableViewController {
         
         self.performSegue(withIdentifier: Constants.UserAuthentication.Segues.SHOW_WELCOME_SCREEN, sender: nil)
     }
+    
+    // MARK: - Fetching from Firbase
+    
     func fetchProducts() {
-        products = Product.fetchProducts()
-        tableView.reloadData()
+        Product.fetchProductsFromFirebase { (products) in
+            self.products = products
+            self.tableView.reloadData()
+        }
     }
 
     // MARK: - Table view data source

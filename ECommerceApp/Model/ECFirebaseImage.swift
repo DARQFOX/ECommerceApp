@@ -50,6 +50,41 @@ class ECFirebaseImage {
     }
 }
 
+extension ECFirebaseImage {
+    class func downloadProfileImage(_ uid: String, completion: @escaping (UIImage?, Error?) -> Void) {
+        ECStorageReference.profileImages.reference().child(uid).getData(maxSize: 1 * 1024 * 1024) { (imageData, error) in
+            if error == nil && imageData != nil {
+                let image = UIImage(data: imageData!)
+                completion(image, error)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
+    
+    class func downloadImage(uri: String, completion: @escaping (UIImage?, Error?) -> Void) {
+        Storage.storage().reference(forURL: uri).getData(maxSize: 1 * 1024 * 1024) { (imageData, error) in
+            if error == nil && imageData != nil {
+            let image = UIImage(data: imageData!)
+                completion(image, error)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
+    
+    class func downloadImage(uid: String, completion: @escaping (UIImage?, Error?) -> Void) {
+        ECStorageReference.images.reference().child(uid).getData(maxSize: 1 * 1024 * 1024) { (imageData, error) in
+            if error == nil && imageData != nil {
+                let image = UIImage(data: imageData!)
+                completion(image, error)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
+}
+
 private extension UIImage {
     
     func resize() -> UIImage {

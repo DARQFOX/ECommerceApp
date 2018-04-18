@@ -18,14 +18,25 @@ class ProductFeedCell: UITableViewCell {
         didSet {
             updateUI()
         }
-        
     }
     
     func updateUI() {
+        if let product = product {
+            // Download the product image
+            productImageView.image = nil
+            if let imageLinks = product.imageLinks, let imageLink = imageLinks.first {
+                ECFirebaseImage.downloadImage(uri: imageLink) { (image, error) in
+                    if error == nil {
+                        self.productImageView.image = image
+                    }
+                }
+            }
+            
+            productImageView.image = product.images?.first
+            productNameLabel.text = product.name
+            productPriceLabel.text = "$\(product.price!)"
+        }
         
-        productImageView.image = product!.images?.first
-        productNameLabel.text = product!.name
-        productPriceLabel.text = "\(product!.price!)"
         
     }
 }
