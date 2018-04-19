@@ -15,7 +15,7 @@ protocol ProductImagesPageViewControllerDelegate: class {
 
 class ProductImagesPageViewController: UIPageViewController {
     
-    var images: [UIImage]? = Product.fetchProducts().first!.images
+    var product: Product!
     
     weak var pageViewControllerDelegate: ProductImagesPageViewControllerDelegate?
         
@@ -24,13 +24,12 @@ class ProductImagesPageViewController: UIPageViewController {
         
         var controllers = [UIViewController]()
         
-        if let images = self.images {
-            for image in images {
-                let productImageVC = storyboard.instantiateViewController(withIdentifier: Constants.ProductFeed.Controllers.PRODUCT_IMAGE_VIEW_CONTROLLER)
-                controllers.append(productImageVC)
+        if let imageLinks = self.product.imageLinks {
+            for images in imageLinks {
+                let productImageViewController = storyboard.instantiateViewController(withIdentifier: Constants.ProductFeed.Controllers.PRODUCT_IMAGE_VIEW_CONTROLLER)
+                controllers.append(productImageViewController)
             }
         }
-        
         self.pageViewControllerDelegate?.setupPageController(numberOfPages: controllers.count)
         
         return controllers
@@ -69,7 +68,7 @@ class ProductImagesPageViewController: UIPageViewController {
         for (index, vc) in controllers.enumerated() {
             if viewController === vc {
                 if let productImageVC = viewController as? ProductImageViewController {
-                    productImageVC.image = self.images?[index]
+                    productImageVC.imageLink = self.product.imageLinks?[index]
                     
                     self.pageViewControllerDelegate?.turnPageController(to: index)
                 }

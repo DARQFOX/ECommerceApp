@@ -12,21 +12,16 @@ class ProductImageViewController: UIViewController {
     
     @IBOutlet weak var productImageView: UIImageView!
     
-    var image: UIImage? {
+    var imageLink: String? {
         didSet {
-            self.productImageView?.image = image
+            if let imageLink = imageLink {
+                ECFirebaseImage.downloadImage(uri: imageLink, completion: { (image, error) in
+                    if error == nil, image != nil {
+                       self.productImageView.image = image
+                    }
+                })
+            }
         }
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        self.productImageView.image = image
-    }
     
-
-    
-    // MARK: - Navigation
-
-
 }

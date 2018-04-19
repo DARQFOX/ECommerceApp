@@ -32,7 +32,7 @@ class ProductFeedCell: UITableViewCell {
                 }
             }
             
-            productImageView.image = product.images?.first
+//            productImageView.image = product.images?.first
             productNameLabel.text = product.name
             productPriceLabel.text = "$\(product.price!)"
         }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ProductDetailTableViewController: UITableViewController {
     
@@ -103,7 +104,7 @@ class ProductDetailTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.ProductFeed.Controllers.SHOW_IMAGES_PAGE_VC {
             if let imagesPageVC = segue.destination as? ProductImagesPageViewController {
-                imagesPageVC.images = product?.images
+                imagesPageVC.product = product
                 imagesPageVC.pageViewControllerDelegate = productImagesHeaderView
             }
         }
