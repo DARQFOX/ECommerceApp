@@ -22,6 +22,7 @@ class WelcomeScreenViewController: UIViewController {
         
         Auth.auth().addStateDidChangeListener { (Auth, User) in
             if User != nil {
+                // Just logged in successfully
                 self.dismiss(animated: false, completion: nil)
             }
         }

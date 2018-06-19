@@ -29,7 +29,6 @@ class SignupTableViewController: UITableViewController, UIImagePickerControllerD
         }
         
         imagePicker.delegate = self
-        
         present(imagePicker, animated: true, completion: nil)
     }
     @IBAction func createNewAccountDidTap(_ sender: Any) {
@@ -39,16 +38,17 @@ class SignupTableViewController: UITableViewController, UIImagePickerControllerD
             let password = createPasswordTextField.text!
             let fullName = fullNameTextField.text!
             
-            
+            // Sign up a new account
             Auth.auth().createUser(withEmail: email, password: password) { (User, error) in
                 
                 if error != nil {
-                    print(error)
+                    print(error as Any)
                 } else {
-                    let newUser = ECUser(uid: (User?.uid)!, username: username, profileImage: self.profileImageView.image!, email: email, fullName: fullName)
+                    // Save the user's information
+                    let newUser = ECUser(uid: (User?.user.uid)!, username: username, profileImage: self.profileImageView.image!, email: email, fullName: fullName)
                     newUser.save(completion: { (error) in
                         if error != nil {
-                            print(error)
+                            print(error as Any)
                         } else {
                             // Successfully signed up a new account
                             // log in the user to use the app

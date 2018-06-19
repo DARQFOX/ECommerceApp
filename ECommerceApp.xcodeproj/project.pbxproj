@@ -13,6 +13,7 @@
 		EF13925E2061C07F000ABBE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF13925C2061C07F000ABBE6 /* LaunchScreen.storyboard */; };
 		EF243B452082648200D9BA5D /* SignupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF243B442082648200D9BA5D /* SignupTableViewController.swift */; };
 		EF2B3CD82076B783003CC223 /* ProductImagesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2B3CD72076B783003CC223 /* ProductImagesPageViewController.swift */; };
+		EF4D90AB20D87E52005BE98A /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D90AA20D87E52005BE98A /* ShoppingCart.swift */; };
 		EF54CBB02073C651002DCB0E /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF54CBAF2073C651002DCB0E /* FeedTableViewController.swift */; };
 		EF54CBB22073D512002DCB0E /* ProductFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF54CBB12073D512002DCB0E /* ProductFeedCell.swift */; };
 		EF54CBB42073EA05002DCB0E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF54CBB32073EA05002DCB0E /* Constants.swift */; };
@@ -55,6 +56,7 @@
 		EF13925F2061C07F000ABBE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF243B442082648200D9BA5D /* SignupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupTableViewController.swift; sourceTree = "<group>"; };
 		EF2B3CD72076B783003CC223 /* ProductImagesPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImagesPageViewController.swift; sourceTree = "<group>"; };
+		EF4D90AA20D87E52005BE98A /* ShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
 		EF54CBAF2073C651002DCB0E /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		EF54CBB12073D512002DCB0E /* ProductFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFeedCell.swift; sourceTree = "<group>"; };
 		EF54CBB32073EA05002DCB0E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				EF54CBB32073EA05002DCB0E /* Constants.swift */,
 				EFE793F1207FCF0600957FDC /* ECFirebaseImage.swift */,
 				EFE793F3207FECEF00957FDC /* ECUser.swift */,
+				EF4D90AA20D87E52005BE98A /* ShoppingCart.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -255,8 +258,7 @@
 				EF13924C2061C07F000ABBE6 /* Sources */,
 				EF13924D2061C07F000ABBE6 /* Frameworks */,
 				EF13924E2061C07F000ABBE6 /* Resources */,
-				F0605DA902E61AE4D31C6B98 /* [CP] Embed Pods Frameworks */,
-				EDFCE625A85A8AE32A8BE8B3 /* [CP] Copy Pods Resources */,
+				3E52B3B10910693B2F082EEA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -316,40 +318,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		831C621CEADF419ADEA3D929 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ECommerceApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EDFCE625A85A8AE32A8BE8B3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ECommerceApp/Pods-ECommerceApp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F0605DA902E61AE4D31C6B98 /* [CP] Embed Pods Frameworks */ = {
+		3E52B3B10910693B2F082EEA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -371,6 +340,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ECommerceApp/Pods-ECommerceApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		831C621CEADF419ADEA3D929 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ECommerceApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -405,6 +392,7 @@
 				EF54CBBB2074435B002DCB0E /* ProductDetailCell.swift in Sources */,
 				EFE793F4207FECEF00957FDC /* ECUser.swift in Sources */,
 				EF54CBBD20744395002DCB0E /* BuyButtonCell.swift in Sources */,
+				EF4D90AB20D87E52005BE98A /* ShoppingCart.swift in Sources */,
 				EF63927B207D615700624803 /* RoundedButton.swift in Sources */,
 				EF54CBB42073EA05002DCB0E /* Constants.swift in Sources */,
 				EFFC2359207C358C0089E2D9 /* TotalCell.swift in Sources */,
